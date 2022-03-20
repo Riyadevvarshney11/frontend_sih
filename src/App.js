@@ -14,6 +14,7 @@ import {
   IconProps,
   Icon,
 } from '@chakra-ui/react';
+import FileUpload from './FileUpload';
 
 const avatars = [
   {
@@ -171,6 +172,7 @@ export default function JoinOurTeam() {
               <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
                 Upload CV
               </Button>
+              <FileUpload/>
             </Stack>
             <Button
               fontFamily={'heading'}
