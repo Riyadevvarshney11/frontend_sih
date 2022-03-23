@@ -1,6 +1,7 @@
 import {
   Box,
   Flex,
+  Image,
   Stack,
   Heading,
   Text,
@@ -15,7 +16,9 @@ import {
   Icon,
 } from '@chakra-ui/react';
 import FileUpload from './FileUpload';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import logo from './image.gif';
+import logo1 from './Pehchan.png';
 const avatars = [
   {
     name: 'Ryan Florence',
@@ -42,79 +45,44 @@ const avatars = [
 export default function JoinOurTeam() {
   return (
     <Box position={'relative'}>
+     
       <Container
         as={SimpleGrid}
         maxW={'7xl'}
+        
         columns={{ base: 1, md: 2 }}
         spacing={{ base: 10, lg: 32 }}
-        py={{ base: 10, sm: 20, lg: 32 }}>
-        <Stack spacing={{ base: 10, md: 20 }}>
-          <Heading
+        py={{ base: 10, sm: 20, lg: 3 }}>
+        <Stack spacing={{ base: 10, md: 2 }}>
+          <Image
+            boxSize='300px'
+            objectFit='cover'
+            src={logo1}
+            alt='Dan Abramov'
+          />
+          
+          <Image boxSize='500px' src={logo} alt='Dan Abramov' />
+          {/* <Image
+            boxSize='150px'
+            objectFit='cover'
+            src='https://bit.ly/dan-abramov'
+            alt='Dan Abramov'
+          />
+        <img  height= "40px" src=  alt="Logo" /> */}
+        {/* <img src={logo} alt="loading..." /> */}
+          {/* <Heading
             lineHeight={1.1}
             fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
-            Senior web designers{' '}
+           
+            Pehchan{' '}
             <Text
               as={'span'}
               bgGradient="linear(to-r, red.400,pink.400)"
               bgClip="text">
-              &
+              
             </Text>{' '}
-            Full-Stack Developers
-          </Heading>
-          <Stack direction={'row'} spacing={4} align={'center'}>
-            <AvatarGroup>
-              {avatars.map((avatar) => (
-                <Avatar
-                  key={avatar.name}
-                  name={avatar.name}
-                  src={avatar.url}
-                  size={useBreakpointValue({ base: 'md', md: 'lg' })}
-                  position={'relative'}
-                  zIndex={2}
-                  _before={{
-                    content: '""',
-                    width: 'full',
-                    height: 'full',
-                    rounded: 'full',
-                    transform: 'scale(1.125)',
-                    bgGradient: 'linear(to-bl, red.400,pink.400)',
-                    position: 'absolute',
-                    zIndex: -1,
-                    top: 0,
-                    left: 0,
-                  }}
-                />
-              ))}
-            </AvatarGroup>
-            <Text fontFamily={'heading'} fontSize={{ base: '4xl', md: '6xl' }}>
-              +
-            </Text>
-            <Flex
-              align={'center'}
-              justify={'center'}
-              fontFamily={'heading'}
-              fontSize={{ base: 'sm', md: 'lg' }}
-              bg={'gray.800'}
-              color={'white'}
-              rounded={'full'}
-              width={useBreakpointValue({ base: '44px', md: '60px' })}
-              height={useBreakpointValue({ base: '44px', md: '60px' })}
-              position={'relative'}
-              _before={{
-                content: '""',
-                width: 'full',
-                height: 'full',
-                rounded: 'full',
-                transform: 'scale(1.125)',
-                bgGradient: 'linear(to-bl, orange.400,yellow.400)',
-                position: 'absolute',
-                zIndex: -1,
-                top: 0,
-                left: 0,
-              }}>
-              YOU
-            </Flex>
-          </Stack>
+          </Heading> */}
+          
         </Stack>
         <Stack
           bg={'gray.50'}
@@ -127,7 +95,7 @@ export default function JoinOurTeam() {
               color={'gray.800'}
               lineHeight={1.1}
               fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
-              Join our team
+              Upload Your Documents
               <Text
                 as={'span'}
                 bgGradient="linear(to-r, red.400,pink.400)"
@@ -136,41 +104,20 @@ export default function JoinOurTeam() {
               </Text>
             </Heading>
             <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-              We’re looking for amazing engineers just like you! Become a part
-              of our rockstar engineering team and skyrocket your career!
+            A system for high compression and decompression of Photograph and documents without loss of Quality
             </Text>
           </Stack>
           <Box as={'form'} mt={10}>
             <Stack spacing={4}>
-              <Input
-                placeholder="Firstname"
-                bg={'gray.100'}
-                border={0}
-                color={'gray.500'}
-                _placeholder={{
-                  color: 'gray.500',
-                }}
-              />
-              <Input
-                placeholder="firstname@lastname.io"
-                bg={'gray.100'}
-                border={0}
-                color={'gray.500'}
-                _placeholder={{
-                  color: 'gray.500',
-                }}
-              />
-              <Input
-                placeholder="+1 (___) __-___-___"
-                bg={'gray.100'}
-                border={0}
-                color={'gray.500'}
-                _placeholder={{
-                  color: 'gray.500',
-                }}
-              />
+                           
+            
               <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
-                Upload CV
+               Upload Aadhaar Card
+              </Button>
+              <FileUpload/>
+
+              <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
+               Upload Pan Card
               </Button>
               <FileUpload/>
             </Stack>

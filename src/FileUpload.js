@@ -40,6 +40,7 @@ export default class FileUpload extends Component {
                             <input type="file" name="imgCollection" onChange={this.onFileChange} multiple />
                         </div>
                         <div className="form-group">
+                            
                             <button className="btn btn-primary" type="submit">Click here to upload Docs</button>
                         </div>
                     </form>
